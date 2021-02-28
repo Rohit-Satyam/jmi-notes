@@ -25,7 +25,7 @@ cout << "Giraffe" << endl;
 cout << "Giraffe \n";
 ```
 
-#### Length of strings
+#### strings
 
 ```c
 int main ()
@@ -40,3 +40,66 @@ cout << phrase.substr(8,3)  // to grab a part of a string; requires the index po
 
 }
 ```
+
+#### Numbers
+
+```c
+#include <iostream>
+#include <cmath>      // to do maths in C++
+
+using namespace std;
+
+int main ()
+{
+int wnum=5;
+wnum += 80; // will print 5+80 and assign the number to wnum. You can do *=, -=, /= etc.
+cout << "wnum";
+cout << pow(2,5); // means 2 ki power 5
+cout << sqrt(36); // square root of 36. Takes both integers and decimals.
+cout << round(4.3);  // roundoff. another function ceil(4.3) will always round-up towards higher number i.e. 5 and floor(4.3) will always round-up towards a lower number (4 here).
+cout << fmax(3,10);    // returns bigger number out of the two numbers
+}
+```
+
+#### User Input
+
+```c
+int main ()
+{
+string name;
+getline(cin, name);   // more efficient way to save the entire line in form of strings in C++ from console
+}
+```
+#### Writing Functions
+
+```c
+// write a function block before the main() function block
+
+void sayHi(string name, int age){   // giving function named sayHi two parameters
+cout << "Hi "<< name << ". You are "<< age << " years old. \n";
+}
+
+int main {
+sayHi("Rohit",24)
+}
+```
+
+The above code will give error if you defined the function below main function. This is because compiler isn't aware about the newly written function yet. In case if you want to access the function from anywhere in the code, initialise the function first as follows
+
+```c
+// write initialisation before the main() function block
+
+void sayHi(string name, int age);
+
+int main {
+sayHi("Rohit",24)
+}
+
+void sayHi(string name, int age){   // giving function named sayHi two parameters
+cout << "Hi "<< name << ". You are "<< age << " years old. \n";
+}
+
+```
+
+
+
