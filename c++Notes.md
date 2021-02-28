@@ -101,5 +101,55 @@ cout << "Hi "<< name << ". You are "<< age << " years old. \n";
 
 ```
 
+#### Return type
+
+This is used when you wish to return values from a function. "return" is a special word and also tells c program that when encountered, the program must exit (or break) at that line and nothing below that is executed. And therefore it's preferentially mentioned at the end of the code. Eg:
+
+
+```c
+#include <iostream>
+using namespace std;
+
+double cube(double num){
+return num * num * num;
+cout << "Hello there!!";    // this line will never be printed because the return was encountered above it. So the code terminates above.
+}
+
+int main (){
+cout << cube(5.0);
+}
+```
+
+#### IF Else
+
+```c
+if(condition1 && condition2){}    //&& is for specifying two conditions are met
+if(condition1 || condition2){}    //eitherof them is true
+if(condition1 && !condition2){}     // ! mark  means condition2 is false
+```
+
+#### Switch
+
+To see which number corresponds to which day. Use when you have lot of conditions to check beside if else statements.
+
+```c
+int daysOfWeek(int daynum){
+string dayName;
+
+switch(dayNam){
+case 0:
+dayName = "Sunday";
+break;
+case 1:
+dayName = "Monday";
+
+default:
+dayName = "Invalid day Number"
+}
+return dayName;
+}
+
+
+
 
 
