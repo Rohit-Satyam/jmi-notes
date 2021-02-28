@@ -34,6 +34,9 @@ string phrase = "Giraffe Academy"
                //0123456789...
 cout << phrase.length();    // Use "." followed by name of the function (Length here)
 cout << phrase[0]; //print the first character
-cout << phrase[0] = 'B'; Substitute G with B
+cout << phrase[0] = 'B'; //Substitute G with B
+cout << phrase.find("Academy", 0) // search for index from where the word accademy occurs (which returns 8 here). 0 represents to start the search from the 0th index (i.e. starting of the string)
+cout << phrase.substr(8,3)  // to grab a part of a string; requires the index position (say 8 here) and length of the substring that needs to be extracted (3 characters here).
+
 }
 ```
