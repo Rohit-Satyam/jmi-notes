@@ -148,6 +148,32 @@ dayName = "Invalid day Number"
 }
 return dayName;
 }
+```
+
+#### 2D arrays
+
+```c
+int numGrid[3][2] = {
+{1,2},
+{3,4},
+{5,6}
+}
+
+// [3][2] tells the number of rows andcolumns in array.
+```
+
+To write a block of comments enclose the lines as follows
+
+```c
+
+/* here I type comment
+blah
+blah
+
+everything between these two tags are comment
+```
+*/
+```
 
 
 
