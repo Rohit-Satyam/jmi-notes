@@ -27,11 +27,13 @@ cout << "Giraffe \n";
 
 #### Length of strings
 
-```
+```c
 int main ()
 {
 string phrase = "Giraffe Academy"
+               //0123456789...
 cout << phrase.length();    // Use "." followed by name of the function (Length here)
-
+cout << phrase[0]; //print the first character
+cout << phrase[0] = 'B'; Substitute G with B
 }
 ```
