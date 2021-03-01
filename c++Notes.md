@@ -175,6 +175,26 @@ everything between these two tags are comment
 */
 ```
 
+#### Call by reference
+
+Access the address of a variable by using `&` beforeit
+
+```c
+int raja = 1
+
+cout << &raja;
+
+```
+
+#### Pointer variable
+The pointer variable stores the address of the variable
+
+```c
+int age = 19;
+int *pAge = &age;   //usually we use small "p" before the name of pointer variable
+
+```
+
 
 
 
