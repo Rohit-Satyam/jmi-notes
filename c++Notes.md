@@ -193,6 +193,9 @@ The pointer variable stores the address of the variable
 int age = 19;
 int *pAge = &age;   //usually we use small "p" before the name of pointer variable
 
+cout << pAge; // to print the address of the pointer
+cout << *pAge // dereferencing a pointer to print the value the pointer points to
+
 ```
 
 
