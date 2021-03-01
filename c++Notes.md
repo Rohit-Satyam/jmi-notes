@@ -196,7 +196,22 @@ int *pAge = &age;   //usually we use small "p" before the name of pointer variab
 cout << pAge; // to print the address of the pointer
 cout << *pAge // dereferencing a pointer to print the value the pointer points to
 
+// shortcut
+
+cout << &age // to print the address of the pointer
+cout << *&age // dereferencing a pointer to print the value the pointer points to
+cout << &*&age to print the address of the pointer
+
+//and so on
+
 ```
+
+#### Classes
+
+They let you build your own new datatype by using combination of various existing data types since the existing ones are very limited in number. Once a class is made, you want to use it.Object is what one use to use a class. Object is the  instance of the class whereas class is a template of the new datatype.
+
+```c
+
 
 
 
