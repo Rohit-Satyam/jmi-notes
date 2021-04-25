@@ -10,6 +10,8 @@ Protein-DNA interaction study [methods](https://www.youtube.com/watch?v=thd6aPeS
 
 DNA [Microarray](https://www.youtube.com/watch?v=6ZzFihESjp0)
 
+UCLA Institute of Quantitative & Computational Biosciences workshops [recordings](https://qcb.ucla.edu/collaboratory/workshops/w1-intro-to-unix-command-line/)
+
 # Bioinformatics Fundamentals
 
 1. Markov Chains: Read [here](https://towardsdatascience.com/introduction-to-markov-chains-50da3645a50d)
