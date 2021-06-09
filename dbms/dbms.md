@@ -53,4 +53,17 @@ FROM people
 LIMIT 10;
 ```
 
+### SELECT DISTINCT
+
+Often your results will include many duplicate values. If you want to select all the unique values from a column, you can use the  `DISTINCT`  keyword.
+
+This might be useful if, for example, you're interested in knowing which languages are represented in the  `films`  table:
+
+```
+SELECT DISTINCT language
+FROM films;
+```
+
+Remember, you can check out the data in the tables by clicking on the table name!
+
 Before getting started with the instructions below, check out the column names in the  `films`  table!
