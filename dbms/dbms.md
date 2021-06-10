@@ -67,3 +67,15 @@ FROM films;
 Remember, you can check out the data in the tables by clicking on the table name!
 
 Before getting started with the instructions below, check out the column names in the  `films`  table!
+
+
+### Learning to COUNT
+
+What if you want to count the number of employees in your employees table? The  `COUNT`  statement lets you do this by returning the number of rows in one or more columns.
+
+For example, this code gives the number of rows in the  `people`  table:
+
+```
+SELECT COUNT(*)
+FROM people;
+```
