@@ -79,3 +79,21 @@ For example, this code gives the number of rows in the  `people`  table:
 SELECT COUNT(*)
 FROM people;
 ```
+
+`COUNT(*)`  tells you how many rows are in a table. However, if you want to count the number of  _non-missing_  values in a particular column, you can call  `COUNT`  on just that column.
+
+For example, to count the number of birth dates present in the  `people`  table:
+
+```
+SELECT COUNT(birthdate)
+FROM people;
+```
+
+It's also common to combine  `COUNT`  with  `DISTINCT`  to count the number of  _distinct_  values in a column.
+
+For example, this query counts the number of distinct birth dates contained in the  `people`  table:
+
+```
+SELECT COUNT(DISTINCT birthdate)
+FROM people;
+```
