@@ -119,3 +119,28 @@ WHERE title = 'Metropolis';
 Notice that the  `WHERE`  clause always comes after the  `FROM`  statement!
 
 **Note that in this course we will use  `<>`  and not  `!=`  for the not equal operator, as per the SQL standard.**
+
+### WHERE AND
+
+Often, you'll want to select data based on multiple conditions. You can build up your  `WHERE`  queries by combining multiple conditions with the  `AND`  keyword.
+
+For example,
+
+```
+SELECT title
+FROM films
+WHERE release_year > 1994
+AND release_year < 2000;
+```
+
+gives you the titles of films released between 1994 and 2000.
+
+Note that you need to specify the column name separately for every  `AND`  condition, so the following would be invalid:
+
+```
+SELECT title
+FROM films
+WHERE release_year > 1994 AND < 2000;
+```
+
+You can add as many  `AND`  conditions as you need!
