@@ -144,3 +144,61 @@ WHERE release_year > 1994 AND < 2000;
 ```
 
 You can add as many  `AND`  conditions as you need!
+
+### WHERE AND OR
+
+What if you want to select rows based on multiple conditions where some but not  _all_  of the conditions need to be met? For this, SQL has the  `OR`  operator.
+
+For example, the following returns all films released in  _either_  1994 or 2000:
+
+```
+SELECT title
+FROM films
+WHERE release_year = 1994
+OR release_year = 2000;
+
+```
+
+Note that you need to specify the column for every  `OR`  condition, so the following is invalid:
+
+```
+SELECT title
+FROM films
+WHERE release_year = 1994 OR 2000;
+
+```
+
+When combining  `AND`  and  `OR`, be sure to enclose the individual clauses in parentheses, like so:
+
+```
+SELECT title
+FROM films
+WHERE (release_year = 1994 OR release_year = 1995)
+AND (certification = 'PG' OR certification = 'R');
+
+```
+
+Otherwise, due to SQL's precedence rules, you may not get the results you're expecting!
+
+
+### BETWEEN
+
+As you've learned, you can use the following query to get titles of all films released in and between 1994 and 2000:
+
+```
+SELECT title
+FROM films
+WHERE release_year >= 1994
+AND release_year <= 2000;
+```
+
+Checking for ranges like this is very common, so in SQL the  `BETWEEN`  keyword provides a useful shorthand for filtering values within a specified range. This query is equivalent to the one above:
+
+```
+SELECT title
+FROM films
+WHERE release_year
+BETWEEN 1994 AND 2000;
+```
+
+It's important to remember that  `BETWEEN`  is  _inclusive_, meaning the beginning and end values are included in the results!
