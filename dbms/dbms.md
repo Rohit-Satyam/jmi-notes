@@ -97,7 +97,7 @@ For example, this query counts the number of distinct birth dates contained in t
 SELECT COUNT(DISTINCT birthdate)
 FROM people;
 ```
-
+### Filtering in SQL
 In SQL, the  `WHERE`  keyword allows you to filter based on both text and numeric values in a table. There are a few different comparison operators you can use:
 
 -   `=`  equal
