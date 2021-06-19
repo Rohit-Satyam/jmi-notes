@@ -202,3 +202,15 @@ BETWEEN 1994 AND 2000;
 ```
 
 It's important to remember that  `BETWEEN`  is  _inclusive_, meaning the beginning and end values are included in the results!
+
+
+Similar to the  `WHERE`  clause, the  `BETWEEN`  clause can be used with multiple  `AND`  and  `OR`  operators, so you can build up your queries and make them even more powerful!
+
+For example, suppose we have a table called  `kids`. We can get the names of all kids between the ages of 2 and 12 from the United States:
+
+```
+SELECT name
+FROM kids
+WHERE age BETWEEN 2 AND 12
+AND nationality = 'USA';
+```
