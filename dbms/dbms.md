@@ -97,3 +97,25 @@ For example, this query counts the number of distinct birth dates contained in t
 SELECT COUNT(DISTINCT birthdate)
 FROM people;
 ```
+
+In SQL, the  `WHERE`  keyword allows you to filter based on both text and numeric values in a table. There are a few different comparison operators you can use:
+
+-   `=`  equal
+-   `<>`  not equal
+-   `<`  less than
+-   `>`  greater than
+-   `<=`  less than or equal to
+-   `>=`  greater than or equal to
+
+For example, you can filter text records such as  `title`. The following code returns all films with the title  `'Metropolis'`:
+
+```
+SELECT title
+FROM films
+WHERE title = 'Metropolis';
+
+```
+
+Notice that the  `WHERE`  clause always comes after the  `FROM`  statement!
+
+**Note that in this course we will use  `<>`  and not  `!=`  for the not equal operator, as per the SQL standard.**
