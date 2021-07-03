@@ -23,3 +23,14 @@ Finally, you can also remove elements from your list. You can do this with the  
 x = ["a", "b", "c", "d"]
 del(x[1])
 ```
+
+The  `;`  sign is used to place commands on the same line. The following two code chunks are equivalent:
+
+```
+# Same line
+command1; command2
+
+# Separate lines
+command1
+command2
+```
