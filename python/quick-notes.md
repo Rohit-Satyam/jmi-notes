@@ -4,3 +4,13 @@ Python is perfectly suited to do basic calculations. Apart from addition, subtra
 
 -   Exponentiation:  `**`. This operator raises the number to its left to the power of the number to its right. For example  `4**2`  will give  `16`.
 -   Modulo:  `%`. This operator returns the remainder of the division of the number to the left by the number on its right. For example  `18 % 7`  equals  `4`.
+
+
+# Extend a list
+
+If you can change elements in a list, you sure want to be able to add elements to it, right? You can use the  `+`  operator:
+
+```
+x = ["a", "b", "c", "d"]
+y = x + ["e", "f"]
+```
