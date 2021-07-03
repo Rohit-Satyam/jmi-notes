@@ -42,3 +42,10 @@ To be absolutely clear: in Python, everything is an object, and each object has 
 # String Methods
 
 Strings come with a bunch of methods. Follow the instructions closely to discover some of them. If you want to discover them in more detail, you can always type  `help(str)`  in the IPython Shell.
+
+
+Most list methods will change the list they're called on. Examples are:
+
+-   [`append()`](https://docs.python.org/3/library/stdtypes.html#typesseq-mutable), that adds an element to the list it is called on,
+-   [`remove()`](https://docs.python.org/3/library/stdtypes.html#typesseq-mutable), that removes the first element of a list that matches the input, and
+-   [`reverse()`](https://docs.python.org/3/library/stdtypes.html#typesseq-mutable), that reverses the order of the elements in the list it is called on.
