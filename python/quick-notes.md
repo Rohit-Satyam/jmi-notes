@@ -14,3 +14,12 @@ If you can change elements in a list, you sure want to be able to add elements t
 x = ["a", "b", "c", "d"]
 y = x + ["e", "f"]
 ```
+
+# Delete list elements
+
+Finally, you can also remove elements from your list. You can do this with the  `del`  statement:
+
+```
+x = ["a", "b", "c", "d"]
+del(x[1])
+```
