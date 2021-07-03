@@ -34,3 +34,6 @@ command1; command2
 command1
 command2
 ```
+# Methods
+
+To be absolutely clear: in Python, everything is an object, and each object has specific methods associated. Depending on the type of the object, list, string, float, whatever, the available methods are different. A string object like sister has a replace method, but a list like fam doesn't have this, as you can see from this error.
