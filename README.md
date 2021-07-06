@@ -12,7 +12,7 @@ DNA [Microarray](https://www.youtube.com/watch?v=6ZzFihESjp0)
 
 UCLA Institute of Quantitative & Computational Biosciences workshops [recordings](https://qcb.ucla.edu/collaboratory/workshops/w1-intro-to-unix-command-line/)
 
-Recording of Complete Ensembl Genome Browser Workshop.
+Recording of Complete Ensembl Genome Browser Workshop(2021)
 
 Day 1 - https://youtu.be/eKEXArkHdmg<br>
 Day 2 - https://youtu.be/-JO-vFoLJ10<br>
