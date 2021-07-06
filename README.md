@@ -32,6 +32,7 @@ Day 5- https://youtu.be/VpcBVigIvWo<br>
 7. RNAFold Tutorial: [pdf](https://algosb2019.sciencesconf.org/data/RNAtutorial.pdf)
 8. RNAFold Paper: [pdf](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1370799/)
 9. Forward and Reverse Engineering: [Explained](https://techdifferences.com/difference-between-forward-engineering-and-reverse-engineering.html)
+10. NEBCutter tutorial: [watch](https://www.youtube.com/watch?v=IgAAq6mkUH0)
 
 
 # Bioinformatics Fundamentals
