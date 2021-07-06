@@ -12,6 +12,15 @@ DNA [Microarray](https://www.youtube.com/watch?v=6ZzFihESjp0)
 
 UCLA Institute of Quantitative & Computational Biosciences workshops [recordings](https://qcb.ucla.edu/collaboratory/workshops/w1-intro-to-unix-command-line/)
 
+Recording of Complete Ensembl Genome Browser Workshop.
+
+Day 1 - https://youtu.be/eKEXArkHdmg<br>
+Day 2 - https://youtu.be/-JO-vFoLJ10<br>
+Day 3- https://youtu.be/ml_4fGl0ZZ8<br>
+Day 4- https://youtu.be/zT2iKRwjHTY<br>
+Day 5- https://youtu.be/VpcBVigIvWo<br>
+
+
 ## Systems Biology
 
 1. Genetic Algorithms (GA) basics: [Medium Post](https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3)
