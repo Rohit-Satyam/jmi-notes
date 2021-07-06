@@ -22,6 +22,7 @@ UCLA Institute of Quantitative & Computational Biosciences workshops [recordings
 6. [RNAFold:](https://slideplayer.com/slide/4805673/)
 7. RNAFold Tutorial: [pdf](https://algosb2019.sciencesconf.org/data/RNAtutorial.pdf)
 8. RNAFold Paper: [pdf](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1370799/)
+9. Forward and Reverse Engineering: [Explained](https://techdifferences.com/difference-between-forward-engineering-and-reverse-engineering.html)
 
 
 # Bioinformatics Fundamentals
