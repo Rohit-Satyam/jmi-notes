@@ -18,10 +18,14 @@ UCLA Institute of Quantitative & Computational Biosciences workshops [recordings
 2. A youtube tutorial on GA: GA [tutorial](https://www.youtube.com/watch?v=uQj5UNhCPuo). Also, they have a python code tutorial too just in case if u wish to practive GA.
 3. What GA can do: A game [example](https://www.youtube.com/watch?v=Gl3EjiVlz_4)
 4. Intermediate GA [tutorial](https://www.youtube.com/watch?v=7J-DfS52bnI)
+5. To understand [Positional Entropy](https://youtu.be/Prfg9nN2v0k)
+6. [RNAFold:](https://slideplayer.com/slide/4805673/)
+7. RNAFold Tutorial: [pdf](https://algosb2019.sciencesconf.org/data/RNAtutorial.pdf)
+8. RNAFold Paper: [pdf](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1370799/)
+
 
 # Bioinformatics Fundamentals
 
 1. Markov Chains: Read [here](https://towardsdatascience.com/introduction-to-markov-chains-50da3645a50d)
 2. Hidden Markov Model for Biological Sequence: [here](https://towardsdatascience.com/hidden-markov-model-applied-to-biological-sequence-373d2b5a24c)
 3. UPGMA Method: [here](https://www.youtube.com/watch?v=c2y9s_E2184) and [here](http://www.slimsuite.unsw.edu.au/teaching/upgma/)
-4. 
