@@ -27,7 +27,7 @@ CREATE TABLE protein_info (protein_number INT);
 ``` 
 ## Altering the tables
 
-```
+```sql
 ## adding new columns protein_name column
 ALTER TABLE protein_info
 ADD protein_name VARCHAR;
@@ -38,14 +38,14 @@ A  _query_  is a request for data from a database table (or combination of table
 
 In SQL, you can select data from a table using a  `SELECT`  statement. For example, the following query selects the  `name`  column from the  `people`  table:
 
-```
+```sql
 SELECT name
 FROM people;
 ```
 
 In this query,  `SELECT`  and  `FROM`  are called keywords. In SQL, keywords are not case-sensitive, which means you can write the same query as:
 
-```
+```sql
 select name
 from people;
 ```
@@ -61,7 +61,7 @@ In the real world, you will often want to select multiple columns. Luckily, SQL 
 
 For example, this query selects two columns,  `name`  and  `birthdate`, from the  `people`  table:
 
-```
+```sql
 SELECT name, birthdate
 FROM people;
 ```
@@ -75,7 +75,7 @@ FROM people;
 
 If you only want to return a certain number of results, you can use the  `LIMIT`  keyword to limit the number of rows returned:
 
-```
+```sql
 SELECT *
 FROM people
 LIMIT 10;
@@ -87,7 +87,7 @@ Often your results will include many duplicate values. If you want to select all
 
 This might be useful if, for example, you're interested in knowing which languages are represented in the  `films`  table:
 
-```
+```sql
 SELECT DISTINCT language
 FROM films;
 ```
@@ -103,7 +103,7 @@ What if you want to count the number of employees in your employees table? The  
 
 For example, this code gives the number of rows in the  `people`  table:
 
-```
+```sql
 SELECT COUNT(*)
 FROM people;
 ```
@@ -112,7 +112,7 @@ FROM people;
 
 For example, to count the number of birth dates present in the  `people`  table:
 
-```
+```sql
 SELECT COUNT(birthdate)
 FROM people;
 ```
@@ -121,7 +121,7 @@ It's also common to combine  `COUNT`  with  `DISTINCT`  to count the number of  
 
 For example, this query counts the number of distinct birth dates contained in the  `people`  table:
 
-```
+```sql
 SELECT COUNT(DISTINCT birthdate)
 FROM people;
 ```
@@ -137,7 +137,7 @@ In SQL, the  `WHERE`  keyword allows you to filter based on both text and numeri
 
 For example, you can filter text records such as  `title`. The following code returns all films with the title  `'Metropolis'`:
 
-```
+```sql
 SELECT title
 FROM films
 WHERE title = 'Metropolis';
@@ -154,7 +154,7 @@ Often, you'll want to select data based on multiple conditions. You can build up
 
 For example,
 
-```
+```sql
 SELECT title
 FROM films
 WHERE release_year > 1994
@@ -165,7 +165,7 @@ gives you the titles of films released between 1994 and 2000.
 
 Note that you need to specify the column name separately for every  `AND`  condition, so the following would be invalid:
 
-```
+```sql
 SELECT title
 FROM films
 WHERE release_year > 1994 AND < 2000;
@@ -179,7 +179,7 @@ What if you want to select rows based on multiple conditions where some but not 
 
 For example, the following returns all films released in  _either_  1994 or 2000:
 
-```
+```sql
 SELECT title
 FROM films
 WHERE release_year = 1994
@@ -189,7 +189,7 @@ OR release_year = 2000;
 
 Note that you need to specify the column for every  `OR`  condition, so the following is invalid:
 
-```
+```sql
 SELECT title
 FROM films
 WHERE release_year = 1994 OR 2000;
@@ -198,7 +198,7 @@ WHERE release_year = 1994 OR 2000;
 
 When combining  `AND`  and  `OR`, be sure to enclose the individual clauses in parentheses, like so:
 
-```
+```sql
 SELECT title
 FROM films
 WHERE (release_year = 1994 OR release_year = 1995)
@@ -213,7 +213,7 @@ Otherwise, due to SQL's precedence rules, you may not get the results you're exp
 
 As you've learned, you can use the following query to get titles of all films released in and between 1994 and 2000:
 
-```
+```sql
 SELECT title
 FROM films
 WHERE release_year >= 1994
@@ -222,7 +222,7 @@ AND release_year <= 2000;
 
 Checking for ranges like this is very common, so in SQL the  `BETWEEN`  keyword provides a useful shorthand for filtering values within a specified range. This query is equivalent to the one above:
 
-```
+```sql
 SELECT title
 FROM films
 WHERE release_year
@@ -236,7 +236,7 @@ Similar to the  `WHERE`  clause, the  `BETWEEN`  clause can be used with multipl
 
 For example, suppose we have a table called  `kids`. We can get the names of all kids between the ages of 2 and 12 from the United States:
 
-```
+```sql
 SELECT name
 FROM kids
 WHERE age BETWEEN 2 AND 12
