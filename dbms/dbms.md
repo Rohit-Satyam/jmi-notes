@@ -12,7 +12,7 @@ For example, in a table representing employees, we might have a column containin
 
 ## Creating the database
 
-```
+```sql
 CREATE DATABASE protein;
 ## This will create a database with the name protein along with various files such as tables, function. So it sort of produces the structure of your database
 
