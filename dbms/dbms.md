@@ -288,3 +288,10 @@ AND nationality = 'USA';
 UPDATE kids
 SET age = 23 WHERE id = 'jane';
 ```
+
+## Delete the table contents
+
+```sql
+DELETE FROM kids WHERE name='jane';
+
+## This will remove entire row for the kid Jane
