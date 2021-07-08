@@ -10,6 +10,29 @@ For example, in a table representing employees, we might have a column containin
 1. Super key/ or Key: Attributes(columns/fields) of a relation table that can uniquely identify a record (or a row/tuple).Maximum number of super key a relation table can have are: (2)^n -1, where n are number of attributes. This is merely a theoretical concept. We don't use it in databases.
 2. Candidate key: 
 
+## Creating the database
+
+```
+CREATE DATABASE protein;
+## This will create a database with the name protein along with various files such as tables, function. So it sort of produces the structure of your database
+
+## Use the database
+USE protein;
+
+##This will start using the database and automatically save all the tables to it
+
+CREATE TABLE protein_info (protein_number INT);
+
+## create a table with name protein_info with one column protein number that will hold numeric data.
+``` 
+## Altering the tables
+
+```
+## adding new columns protein_name column
+ALTER TABLE protein_info
+ADD protein_name VARCHAR;
+
+```
 ### querying databases
 A  _query_  is a request for data from a database table (or combination of tables). Querying is an essential skill for a data scientist, since the data you need for your analyses will often live in databases.
 
