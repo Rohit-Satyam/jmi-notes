@@ -280,3 +280,11 @@ FROM kids
 WHERE age BETWEEN 2 AND 12
 AND nationality = 'USA';
 ```
+
+## Update the table contents
+
+```sql
+## update the janes age
+UPDATE kids
+SET age = 23 WHERE id = 'jane';
+```
