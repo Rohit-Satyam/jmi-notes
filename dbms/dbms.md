@@ -75,6 +75,10 @@ FROM people;
 SELECT name AS 'NAME' FROM people;
 
 ## This will change the column name from 'name' to capitals 'NAME'.
+
+## To order the table content by contents of name column
+
+SELECT * FROM people ORDER BY name;
 ```
 
 In this query,  `SELECT`  and  `FROM`  are called keywords. In SQL, keywords are not case-sensitive, which means you can write the same query as:
