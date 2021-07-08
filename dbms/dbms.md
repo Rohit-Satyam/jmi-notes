@@ -295,3 +295,21 @@ SET age = 23 WHERE id = 'jane';
 DELETE FROM kids WHERE name='jane';
 
 ## This will remove entire row for the kid Jane
+```
+
+## Other powerful functions
+1. Join: Joins two tables based on a foreign key (common colum entries)
+If there are two tables i.e. table1 and table2 with common column named table1_id and table2_id then to join them
+```sql
+SELECT * FROM table1
+JOIN table2 ON table1.table1_id = table2.table2_id;
+
+#or 
+
+SELECT * FROM table1
+INNER JOIN table2 ON table1.table1_id = table2.table2_id;
+
+## By default the join is inner join
+```
+
+LEFT JOIN will include all the records from table1 if specified in code above (since table1 will be present left to LEFT JOIN keyword) and populate corresponding cells with NULL if there are entries missing from table2. RIGHT JOIN is opposite of this.
