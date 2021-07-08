@@ -7,7 +7,7 @@ For example, in a table representing employees, we might have a column containin
 
 ## Terminology Alert
 
-1. Super key/ or Key: Attributes(columns/fields) of a relation table that can uniquely identify a record (or a row/tuple).Maximum number of super key a relation table can have are: (2)^n -1, where n are number of attributes. This is merely a theoretical concept. We don't use it in databases.
+1. Super key/ or Key: Attributes(columns/fields) of a relation table that can uniquely identify a record (or a row/tuple).Maximum number of super key a relation table can have are: `(2)^n -1,` where n are number of attributes. This is merely a theoretical concept. We don't use it in databases.
 2. Candidate key: 
 
 ## Creating the database
@@ -15,6 +15,9 @@ For example, in a table representing employees, we might have a column containin
 ```sql
 CREATE DATABASE protein;
 ## This will create a database with the name protein along with various files such as tables, function. So it sort of produces the structure of your database
+
+DROP DATABASE protein;
+## Delete database
 
 ## Use the database
 USE protein;
@@ -24,13 +27,31 @@ USE protein;
 CREATE TABLE protein_info (protein_number INT);
 
 ## create a table with name protein_info with one column protein number that will hold numeric data.
+
+## Since the protein number can not be NULL you can explicitely define this by:
+CREATE TABLE protein_info (protein_number INT NOT NULL);
+
+## Also, if you want this number to increase automatically when new records are added you can use
+CREATE TABLE protein_info (protein_number INT NOT NULL AUTO_INCREMENT);
+
+## Since we wish to use protein_number as our primary key so as to uniquely access table records we will specify this explicitly
+CREATE TABLE protein_info (
+protein_number INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY (protein_number)
+);
+
 ``` 
 ## Altering the tables
 
 ```sql
 ## adding new columns protein_name column
 ALTER TABLE protein_info
-ADD protein_name VARCHAR;
+ADD protein_name VARCHAR(255);
+
+## Notes sql doesn't care about line brakes it executes until it encounters ;
+
+## Delete the table
+DROP TABLE protein_info;
 
 ```
 ### querying databases
