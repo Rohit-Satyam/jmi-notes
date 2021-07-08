@@ -54,6 +54,14 @@ ADD protein_name VARCHAR(255);
 DROP TABLE protein_info;
 
 ```
+
+## Entering the data into tables
+
+```sql
+INSERT INTO protein_info (protein_name)
+VALUES ('Myosin'),('POTED'),('spike');
+
+```
 ### querying databases
 A  _query_  is a request for data from a database table (or combination of tables). Querying is an essential skill for a data scientist, since the data you need for your analyses will often live in databases.
 
@@ -62,6 +70,11 @@ In SQL, you can select data from a table using a  `SELECT`  statement. For examp
 ```sql
 SELECT name
 FROM people;
+
+## Change the column name while viewing it
+SELECT name AS 'NAME' FROM people;
+
+## This will change the column name from 'name' to capitals 'NAME'.
 ```
 
 In this query,  `SELECT`  and  `FROM`  are called keywords. In SQL, keywords are not case-sensitive, which means you can write the same query as:
