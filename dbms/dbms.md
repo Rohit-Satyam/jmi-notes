@@ -5,6 +5,11 @@ You can think of a relational database as a collection of tables. A table is jus
 Each row, or record, of a table contains information about a single entity. For example, in a table representing employees, each row represents a single person. Each column, or field, of a table contains a single attribute for all rows in the table. 
 For example, in a table representing employees, we might have a column containing first and last names for all employees.
 
+## Terminology Alert
+
+1. Super key/ or Key: Attributes(columns/fields) of a relation table that can uniquely identify a record (or a row/tuple).Maximum number of super key a relation table can have are: (2)^n -1, where n are number of attributes. This is merely a theoretical concept. We don't use it in databases.
+2. Candidate key: 
+
 ### querying databases
 A  _query_  is a request for data from a database table (or combination of tables). Querying is an essential skill for a data scientist, since the data you need for your analyses will often live in databases.
 
