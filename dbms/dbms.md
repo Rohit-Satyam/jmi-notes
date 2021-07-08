@@ -68,7 +68,7 @@ FROM people;
 
 Sometimes, you may want to select all columns from a table. Typing out every column name would be a pain, so there's a handy shortcut:
 
-```
+```sql
 SELECT *
 FROM people;
 ```
