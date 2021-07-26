@@ -419,9 +419,7 @@ FROM films;
 You can probably guess what the  `MIN()`.
 
 ### A note on arithmetic
-In addition to using aggregate functions, you can perform basic arithmetic with symbols like `+`, `-`, `*`, and ` /.`
-
-So, for example, this gives a result of 12:
+In addition to using aggregate functions, you can perform basic arithmetic with symbols like `+`, `-`, `*`, and ` /.` So, for example, this gives a result of 12:
 ```
 SELECT (4 * 3);
 ```
@@ -431,9 +429,7 @@ SELECT (4 / 3);
 ```
 What's going on here?
 
-SQL assumes that if you divide an integer by an integer, you want to get an integer back. So be careful when dividing!
-
-If you want more precision when dividing, you can add decimal places to your numbers. For example,
+SQL assumes that if you divide an integer by an integer, you want to get an integer back. So be careful when dividing! If you want more precision when dividing, you can add decimal places to your numbers. For example,
 ```
 SELECT (4.0 / 3.0) AS result;
 ```
@@ -469,3 +465,18 @@ FROM films;
 ```
 
 Aliases are helpful for making results more readable!
+
+
+NOTE: SQL assumes that if you divide an integer by an integer, you want to get an integer back. This means that the following will erroneously result in  `400.0`:
+
+```
+SELECT 45 / 10 * 100.0;
+```
+
+This is because  `45 / 10`  evaluates to an integer (`4`), and not a decimal number like we would expect. So when you're dividing make sure at least one of your numbers has a decimal place:
+
+```
+SELECT 45 * 100.0 / 10;
+```
+
+The above now gives the correct answer of  `450.0`  since the numerator (`45 * 100.0`) of the division is now a decimal!
