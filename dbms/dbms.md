@@ -480,3 +480,16 @@ SELECT 45 * 100.0 / 10;
 ```
 
 The above now gives the correct answer of  `450.0`  since the numerator (`45 * 100.0`) of the division is now a decimal!
+
+
+### ORDER BY
+
+In SQL, the  `ORDER BY`  keyword is used to sort results in ascending or descending order according to the values of one or more columns.
+
+By default  `ORDER BY`  will sort in ascending order. If you want to sort the results in descending order, you can use the  `DESC`  keyword. For example,
+```
+SELECT title
+FROM films
+ORDER BY release_year DESC;
+```
+gives you the titles of films sorted by release year, from newest to oldest.
