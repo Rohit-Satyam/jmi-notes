@@ -518,3 +518,35 @@ FROM employees
 GROUP BY sex;
 ```  
 Commonly,  `GROUP BY`  is used with  _aggregate functions_  like  `COUNT()`  or  `MAX()`. Note that  `GROUP BY`  always goes after the  `FROM`  clause!
+
+Note that you can combine  `GROUP BY`  with  `ORDER BY`  to group your results, calculate something about them, and then order your results. For example,
+
+```
+SELECT sex, count(*)
+FROM employees
+GROUP BY sex
+ORDER BY count DESC;
+```
+Note also that `ORDER BY` always goes after `GROUP BY`.
+
+
+### HAVING a great time
+
+In SQL, aggregate functions can't be used in  `WHERE`  clauses. For example, the following query is invalid:
+
+```
+SELECT release_year
+FROM films
+GROUP BY release_year
+WHERE COUNT(title) > 10;
+```
+
+This means that if you want to filter based on the result of an aggregate function, you need another way! That's where the  `HAVING`  clause comes in. For example,
+```
+SELECT release_year
+FROM films
+GROUP BY release_year
+HAVING COUNT(title) > 10;
+```
+
+shows only those years in which more than 10 films were released.
