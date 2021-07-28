@@ -34,6 +34,7 @@ Day 5- https://youtu.be/VpcBVigIvWo<br>
 9. Forward and Reverse Engineering: [Explained](https://techdifferences.com/difference-between-forward-engineering-and-reverse-engineering.html)
 10. NEBCutter tutorial: [watch](https://www.youtube.com/watch?v=IgAAq6mkUH0)
 11. List of various network visualisation [tools](https://bioinformaticsonline.com/pages/view/35386/list-of-visualization-tools-for-network-biology).
+12. Network Visualisation in [R](https://github.com/Rohit-Satyam/jmi-notes/blob/main/README.md).
 
 
 # Bioinformatics Fundamentals
