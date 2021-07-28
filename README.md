@@ -33,6 +33,7 @@ Day 5- https://youtu.be/VpcBVigIvWo<br>
 8. RNAFold Paper: [pdf](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1370799/)
 9. Forward and Reverse Engineering: [Explained](https://techdifferences.com/difference-between-forward-engineering-and-reverse-engineering.html)
 10. NEBCutter tutorial: [watch](https://www.youtube.com/watch?v=IgAAq6mkUH0)
+11. List of various network visualisation [tools](https://bioinformaticsonline.com/pages/view/35386/list-of-visualization-tools-for-network-biology).
 
 
 # Bioinformatics Fundamentals
