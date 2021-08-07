@@ -71,3 +71,35 @@ if movie_title == palindrome:
   
   #desserts I stressed
   ```
+  
+  ## Split strings
+  
+  To split string we use `my_string.split()` function (to split from left) or `my_string.rsplit()` to split from the right.
+  
+  ```python
+  my_string = "This string is to be split"
+  
+  my_string.split(sep = " ")
+  my_string.rsplit(sep = " ")
+  
+  ## maxsplit creates list of defined size. If this is not specified, both method split in same way. For example
+  
+  my_string.split(sep = " ", maxsplit=2)
+  my_string.rsplit(sep = " ",maxsplit=2)
+  
+  # if string containes the \n character and if you wish to split by newline character or carriage space (\r), u can use newline split function as follows
+  my_string = "This string is to\nbe split"
+  my_string.splitlines()
+  
+  ## to remove the leading and the trailing whitespace we use .strip() function, .rstrip() to remove from right only and .lstrip to remove from left only.
+  my_string = " This string is to be split\n"
+  my_string.strip()
+  #"This string is to be split"
+  
+  ## You can also strip special characters by specifying my_string.strip("$")
+  
+  ## the broken strings can be joined using
+  # Join back together and print results
+mystring_join = " ".join(mystring_no_comma)
+  ```
+  
