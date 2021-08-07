@@ -49,3 +49,25 @@ Most list methods will change the list they're called on. Examples are:
 -   [`append()`](https://docs.python.org/3/library/stdtypes.html#typesseq-mutable), that adds an element to the list it is called on,
 -   [`remove()`](https://docs.python.org/3/library/stdtypes.html#typesseq-mutable), that removes the first element of a list that matches the input, and
 -   [`reverse()`](https://docs.python.org/3/library/stdtypes.html#typesseq-mutable), that reverses the order of the elements in the list it is called on.
+
+## Reverse Strings
+
+To reverse strings (like pallindroms) we can use the following notation `[::-1]`.
+
+```python
+In [9]:
+movie
+Out[9]:
+'oh my God! desserts I stressed was an ugly movie'
+# Get the word
+movie_title = movie[11:30]
+
+# Obtain the palindrome
+palindrome = movie_title[::-1]
+
+# Print the word if it's a palindrome
+if movie_title == palindrome:
+	print(palindrome)
+  
+  #desserts I stressed
+  ```
