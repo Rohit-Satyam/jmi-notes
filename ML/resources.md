@@ -3,8 +3,9 @@
 AI is the set of tools for making computer behave intelligently. ML is most prevelant subset of AI.
 
 ## Supervised learning
-kNN
 
+# kNN
+Tutorial 1: 
 ```
 # Load the 'class' package
 library(class)
