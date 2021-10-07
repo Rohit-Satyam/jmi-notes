@@ -5,14 +5,83 @@ AI is the set of tools for making computer behave intelligently. ML is most prev
 ## Supervised learning
 
 # kNN
-Tutorial 1: 
-```
-# Load the 'class' package
+Tutorial 1: Click [here](https://rpubs.com/mayu2019/knn_WineQuality) 
+```r
 library(class)
+library(caret)
+library(e1071)
+library(tidyverse)
+set.seed(123)
 
-# Create a vector of labels
-sign_types <- signs$sign_type
+setwd("C:/Users/Rohit Satyam/Downloads")
+redWine <- read_csv("winequality-white.csv")
+## Exploring categories
+redWine %>% ggplot(aes(x = quality ))+ geom_histogram()
+## trying to balance categories
+redWine1 <- redWine %>% mutate(quality = ifelse(quality <= 5 ,"Low" , "High"))
+redWine1$quality <- as.factor(redWine1$quality)
+redWine1 %>% ggplot(aes(x = quality))+ geom_bar(width = 0.2)
 
-# Classify the next sign observed
-knn(train = signs[-1], test = next_sign, cl = sign_types)
+## Data Preprocessing, using 70% data for training and rest for testing
+wine_split <- caret::createDataPartition(redWine1$quality, p = 0.7 , list= FALSE)
+wine_train <- redWine1[wine_split ,]
+wine_test <- redWine1[-wine_split,]
+
+#  Standardise data 
+
+preProcValues <- preProcess(wine_train, method = c("center", "scale"))
+
+wine_trainsc <- predict(preProcValues, wine_train )
+wine_testsc <- predict(preProcValues, wine_test )
+
+# Check processed data; Our dataset variables are standardised around mean zero with standard deviation as 1. Now we can train our model using the data.
+summary(wine_trainsc$alcohol)
+
+# usually the value of K is sqrt(nrow(redWine)) which is 69 approx
+
+wineTrain <- wine_trainsc[,-12]
+wineTest <- wine_testsc[,-12]
+
+wineTrain_label <- wine_trainsc[,12 , drop = TRUE]
+wineTest_label <- wine_testsc[,12 , drop = TRUE]
+
+wineTrain_label <- wine_trainsc[,12 , drop = TRUE]
+wineTest_label <- wine_testsc[,12 , drop = TRUE]
+
+wineknns<- class::knn(train = wineTrain, test=wineTest, cl=wineTrain_label, k=69)
+# Evaluating model performance
+
+confusionMatrix(wineTest_label, wineknns)
+
+## Our model accuracy is 75% which is less
+
+######## Using Caret library #############
+
+## Caret finds automatically vale of K using cross validation
+
+# Setting up train controls;  3 separate 10-fold validations
+repeats = 3
+numbers = 10
+tunel = 20
+
+
+
+trnCntrl = trainControl(method = "repeatedcv",
+                        number = numbers,
+                        repeats = repeats,
+                        classProbs = TRUE,
+                        summaryFunction = twoClassSummary)
+
+wineKnn <- train(quality~. , data = wine_trainsc, method = "knn",
+                 trControl = trnCntrl,
+                 metric = "ROC",
+                 tuneLength = tunel)
+## ROC was used to select the optimal model using largest value. k=11 was used
+
+plot(wineKnn)
+
+# Predict values using model 
+test_pred <- predict(wineKnn ,wine_testsc, type = "prob")
+# Reforctoring values in two classes
+test_pred$final <- as.factor(ifelse(test_pred$High > 0.5 ,"High","Low"))
 ```
