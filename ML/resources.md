@@ -5,6 +5,7 @@ AI is the set of tools for making computer behave intelligently. ML is most prev
 ## Supervised learning
 
 # kNN
+Exploratory Analysis of Wine dataset: https://rawgit.com/allanbreyes/udacity-data-science/master/p3/submission.html
 Tutorial 1: Click [here](https://rpubs.com/mayu2019/knn_WineQuality) 
 ```r
 library(class)
