@@ -5,8 +5,8 @@ AI is the set of tools for making computer behave intelligently. ML is most prev
 ## Supervised learning
 
 # kNN
-Exploratory Analysis of Wine dataset: https://rawgit.com/allanbreyes/udacity-data-science/master/p3/submission.html
-Tutorial 1: Click [here](https://rpubs.com/mayu2019/knn_WineQuality) 
+Exploratory Analysis of Wine dataset: [here](https://rawgit.com/allanbreyes/udacity-data-science/master/p3/submission.html)<br>
+Tutorial 1: Click [here](https://rpubs.com/mayu2019/knn_WineQuality) <br>
 ```r
 library(class)
 library(caret)
@@ -86,3 +86,14 @@ test_pred <- predict(wineKnn ,wine_testsc, type = "prob")
 # Reforctoring values in two classes
 test_pred$final <- as.factor(ifelse(test_pred$High > 0.5 ,"High","Low"))
 ```
+
+# Naive Bayes
+
+The  `naivebayes`  package offers several ways to peek inside a Naive Bayes model.
+
+Typing the name of the model object provides the  _a priori_  (overall) and conditional probabilities of each of the model's predictors. If one were so inclined, you might use these for calculating  _posterior_  (predicted) probabilities by hand.
+
+Alternatively, R will compute the posterior probabilities for you if the  `type = "prob"`  parameter is supplied to the  `predict()`  function.
+### Understanding the Priori and posterior  probability
+1. [Source1](https://medium.com/analytics-vidhya/of-priors-and-posteriors-bayes-and-big-data-7d533b535df2)
+2. 
