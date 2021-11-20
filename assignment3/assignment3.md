@@ -259,7 +259,7 @@ plotMA(reslfcShrink)
 ``` r
 results <- data.frame(reslfcShrink)
 results$symbol <- gsub("^.*?_","",rownames(results))
-write.csv(reslfcShrink,"LFCShrink.csv")
+write.csv(results,"LFCShrink.csv")
 ```
 
 > We should and will use shrunken LFC values for Function enrichment
