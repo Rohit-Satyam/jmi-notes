@@ -1,0 +1,144 @@
+---
+title: "Assignment 3"
+author: "Rohit Satyam"
+date: "11/20/2021"
+output: 
+    BiocStyle::html_document:
+      toc_float: true
+      code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading Libraries
+
+We will first load the necessary libraries.
+```{r,warning=FALSE,message=FALSE}
+# setwd("~/assignment3")
+library(DESeq2)
+library(ggplot2)
+library("BiocParallel")
+library(org.Hs.eg.db)
+library(dplyr)
+library(tibble)
+library(ggrepel)
+library(pheatmap)
+library(ComplexHeatmap)
+set.seed(1000)
+```
+
+Now we will read the count matrix using the DESeq2 `DESeqDataSetFromMatrix` function. We will also make unique name out of gene symbols and later on recover them after DE Expression analysis.
+```{r}
+## Reading count file and then making unique row names
+file <- read.csv("GSE160435_count.csv")
+file$X <- paste0(seq_len(length(file$X)),"_",file$X)
+rownames(file) <- file$X
+file <- file[,-1]
+cts <- as.matrix(file)
+coldata <- data.frame(sample=colnames(cts),batch=c("covid","covid","covid","mock","mock","mock"),category=c("20","20","19","20","20","19"))
+dds <- DESeqDataSetFromMatrix(countData = cts,
+                              colData = coldata,
+                              design = ~ batch + category)
+## Checking if the levels order is right
+
+dds$batch
+
+## Changing the reference level to mock samples
+dds$batch <- relevel(dds$batch, ref = "mock")
+dds$batch
+```
+As shown above, the reference level was changed to `mock` by using `relevel` function.
+
+## Basic QC
+
+Before performing DE Analysis, it is good practice to perform Post alignment QC which involves performing PCA analysis and Sample-Sample correlation. This is usually performed on `VST` normalised data because it harmonises the data appropriately for such algorithms that works well only for dataset exhibiting Poission Distribution.
+
+Such transformation can be achieved by using `vst` function.We then calculate variability along first two PC's to see if similar samples cluster together or if there is any discrepency.Shall there be any discrepency found, it must be accounted for in our design formula mentioned above.
+
+```{r}
+vsd = vst(object = dds, blind = TRUE,# do not take the design formula into account; best practice for sample-level QC
+                                        fitType = "parametric")
+pcaData <- plotPCA(vsd, intgroup = c("batch","category"), returnData = TRUE)
+pcaData
+percentVar <- round(100 * attr(pcaData, "percentVar"))
+## Seeing if samples cluster majorly according to category
+t <- ggplot(pcaData, aes(x = PC1, y = PC2, color = category, label=name)) +
+    geom_point(size =3) +
+    xlab(paste0("PC1: ", percentVar[1], "% variance")) +
+    ylab(paste0("PC2: ", percentVar[2], "% variance")) +
+    coord_fixed() +
+    ggtitle("PCA with VST data") +theme_bw()+theme(axis.text.x = element_text(face="bold", color="black", size=12),axis.text.y = element_text(face="bold", color="black", size=12))+theme(axis.title.x = element_text(face="bold", colour = "black", size=12), axis.title.y = element_text(face="bold", colour = "black", size=12))+theme(legend.text=element_text(size=12),legend.title=element_text(size=14))
+ t+geom_text_repel()
+ 
+## Seeing if samples cluster majorly according to batch
+t <- ggplot(pcaData, aes(x = PC1, y = PC2, color = batch, label=name)) +
+    geom_point(size =3) +
+    xlab(paste0("PC1: ", percentVar[1], "% variance")) +
+    ylab(paste0("PC2: ", percentVar[2], "% variance")) +
+    coord_fixed() +
+    ggtitle("PCA with VST data") +theme_bw()+theme(axis.text.x = element_text(face="bold", color="black", size=12),axis.text.y = element_text(face="bold", color="black", size=12))+theme(axis.title.x = element_text(face="bold", colour = "black", size=12), axis.title.y = element_text(face="bold", colour = "black", size=12))+theme(legend.text=element_text(size=12),legend.title=element_text(size=14))
+ t+geom_text_repel()
+
+## Another QC plot is correlation heatmap which cluster samples with similar expression profile together. This is a good way to observe if any kind of sample swapping occured or not.
+t <- cor(assay(vsd))
+rownames(t) <- paste(colData(vsd)$batch,rownames(t), sep = " : ")
+
+pheatmap(t)
+```
+
+## Differential Expression Analysis
+
+The differential Expression Analysis for this simple experiment is easy. All you need to use is `DESeq` function that will perform all steps for you. The results of DE analysis can be obtained using `results` function. I used LFC threshold which means I consider a gene to be DE if it exhibit 2 FC and have P-value of 0.05
+
+ `metadata(res)$filterThreshold:` The results of this command means that genes with basemean < 4.717859 have been filtered. This represents 64.12336% of all tested genes!
+ 
+The plot shown below shows the number of rejections over the basemean quantiles. The threshold chosen (red vertical line) is the lowest quantile for which the number of rejections is within 1 residual standard deviation to the peak of the curve.
+
+```{r}
+dds <- DESeq(dds)
+resultsNames(dds) # lists the coefficients
+res <- results(dds, contrast=c("batch","covid","mock"), lfcThreshold = 1, alpha = 0.05)
+res
+ metadata(res)$filterThreshold
+as_tibble(metadata(res)$filterNumRej) %>%
+    ggplot(aes(x = theta, y = numRej)) +
+    geom_point() +
+    geom_vline(xintercept = 0.6641052,
+               color = 'red')
+```
+
+Another interesting plot is the MA-plot (“Mean-Average” plot), a scatter plot of log2FC versus the mean of normalised counts. Genes with a padjusted value lower than 0.05 are colored. The plot highlights the fact that genes with low read counts show substantially higher variability than highly expressed genes, resulting in a strong log2FC even though are likely not really differentially expressed. In the MA-plot, we hope to observe some genes located in the upper/lower right quadrant of the plots (the most interesting candidates).
+
+```{r}
+plotMA(res)
+reslfcShrink <- lfcShrink(dds,
+                 coef=2, type = 'apeglm')
+plotMA(reslfcShrink)
+results <- data.frame(reslfcShrink)
+results$symbol <- gsub("^.*?_","",rownames(results))
+write.csv(reslfcShrink,"LFCShrink.csv")
+```
+
+> We should and will use shrunken LFC values for Function enrichment analysis and ranking genes or to report results.
+
+The DE genes can be viewed as a volcano plot using the following code snippet.
+
+```{r}
+data.frame(reslfcShrink) %>%
+    filter(!is.na(padj)) %>%
+    ggplot(aes(x = log2FoldChange, y = -log10(padj),
+               color = padj < 0.05 & abs(log2FoldChange) > 1)) +
+    scale_colour_manual(values = c("black", "red")) +
+    geom_point(size = 0.8) +
+    geom_hline(yintercept = -log10(0.05)) +
+    geom_vline(xintercept = 1) +
+    geom_vline(xintercept = -1)+theme_bw()
+```
+
+## Session Information {-}
+
+```{r}
+sessionInfo()
+```
