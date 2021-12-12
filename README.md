@@ -42,3 +42,9 @@ Day 5- https://youtu.be/VpcBVigIvWo<br>
 1. Markov Chains: Read [here](https://towardsdatascience.com/introduction-to-markov-chains-50da3645a50d)
 2. Hidden Markov Model for Biological Sequence: [here](https://towardsdatascience.com/hidden-markov-model-applied-to-biological-sequence-373d2b5a24c)
 3. UPGMA Method: [here](https://www.youtube.com/watch?v=c2y9s_E2184) and [here](http://www.slimsuite.unsw.edu.au/teaching/upgma/)
+
+# R functions that makes life easy
+1. file.choose() to choose file interactively. eg `ovcells<- read.csv(file.choose(), header = T, sep=&quot;,&quot;)`
+2. ggplot GUI to make ggplot online and get the corresponding R code: https://shiny.gmw.rug.nl/ggplotgui/
+3. esquisse to make ggplot in browser/a popup in R studio and get the corresponding R code. eg `options("esquisse.display.mode"="dialog")` and then `esquisse:::esquisser()`. [Tutorial](https://www.youtube.com/watch?v=xA9PMizB1VA).
+4. 
