@@ -47,4 +47,5 @@ Day 5- https://youtu.be/VpcBVigIvWo<br>
 1. file.choose() to choose file interactively. eg `ovcells<- read.csv(file.choose(), header = T, sep=&quot;,&quot;)`
 2. ggplot GUI to make ggplot online and get the corresponding R code: https://shiny.gmw.rug.nl/ggplotgui/
 3. esquisse to make ggplot in browser/a popup in R studio and get the corresponding R code. eg `options("esquisse.display.mode"="dialog")` and then `esquisse:::esquisser()`. [Tutorial](https://www.youtube.com/watch?v=xA9PMizB1VA).
-4. 
+4. browser() function to debug a function: This let's you run a part of the function so that you can spot where the error occurs.
+5. 
