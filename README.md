@@ -48,4 +48,22 @@ Day 5- https://youtu.be/VpcBVigIvWo<br>
 2. ggplot GUI to make ggplot online and get the corresponding R code: https://shiny.gmw.rug.nl/ggplotgui/
 3. esquisse to make ggplot in browser/a popup in R studio and get the corresponding R code. eg `options("esquisse.display.mode"="dialog")` and then `esquisse:::esquisser()`. [Tutorial](https://www.youtube.com/watch?v=xA9PMizB1VA).
 4. browser() function to debug a function: This let's you run a part of the function so that you can spot where the error occurs.
-5. 
+
+# Machine Learning
+
+1. Unit 5: Fuzzy Logic<br>
+2. Starting with [Basics Of Computing ll Soft Computing ll Explained in Hindi](https://www.youtube.com/watch?v=8LdZMqcFEHs&list=PLYwpaL_SFmcCPUl8mAnb4g1oExKd0n4Gw)<br>
+[Introduction to Fuzzy Logic+CRISP Set+Fuzzy Set representation (with some numericals)](https://www.youtube.com/watch?v=LUz-FbwPh3Q)<br>
+[Alphacut method](https://youtu.be/vSM9Z0svr9I): Basically when saying aplha cut we means elemets of set with membership value >= alpha. Strict alphacut means >alpha.
+
+2. Unit 4: Genetic Algorithms <br>
+[Complete overview](https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3) <br>
+[Workflow](https://medium.com/geekculture/introduction-to-genetic-algorithm-d417119040b7)
+
+
+3. Unit 3: Unsupervise Clustering 
+[K-means intro](https://medium.com/data-folks-indonesia/step-by-step-to-understanding-k-means-clustering-and-implementation-with-sklearn-b55803f519d6)<br>
+[Formula and gif](https://medium.com/analytics-vidhya/k-means-clustering-3ce2456db7f1)<br>
+[Hebbian Learning Rule with Implementation of AND Gate](https://www.geeksforgeeks.org/hebbian-learning-rule-with-implementation-of-and-gate/)<br>
+
+4. 
