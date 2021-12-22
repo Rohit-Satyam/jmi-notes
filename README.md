@@ -67,3 +67,4 @@ Day 5- https://youtu.be/VpcBVigIvWo<br>
 [Hebbian Learning Rule with Implementation of AND Gate](https://www.geeksforgeeks.org/hebbian-learning-rule-with-implementation-of-and-gate/)<br>
 
 4. 
+[Association Rules Mining](https://edwardnataniel.github.io/blog/association/)
