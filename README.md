@@ -65,6 +65,13 @@ Day 5- https://youtu.be/VpcBVigIvWo<br>
 [K-means intro](https://medium.com/data-folks-indonesia/step-by-step-to-understanding-k-means-clustering-and-implementation-with-sklearn-b55803f519d6)<br>
 [Formula and gif](https://medium.com/analytics-vidhya/k-means-clustering-3ce2456db7f1)<br>
 [Hebbian Learning Rule with Implementation of AND Gate](https://www.geeksforgeeks.org/hebbian-learning-rule-with-implementation-of-and-gate/)<br>
+[Clustering Evaluation](https://towardsdatascience.com/clustering-evaluation-strategies-98a4006fcfc)<br>
 
 4. 
-[Association Rules Mining](https://edwardnataniel.github.io/blog/association/)
+[Association Rules Mining](https://edwardnataniel.github.io/blog/association/)<br>
+[Transfer Functions](https://mlnotebook.github.io/post/transfer-functions/)<br>
+[LTSM](https://youtu.be/LfnrRPFhkuY)<br>
+[GRU](https://youtu.be/tOuXgORsXJ4)<br>
+[RNN](https://youtu.be/Y2wfIKQyd1I)<br>
+[Boltzmann Machine](https://medium.com/machine-learning-researcher/boltzmann-machine-c2ce76d94da5)<br>
+[Hopfield Network](https://medium.com/@serbanliviu/hopfield-nets-and-the-brain-e5880070cdba)<br>
