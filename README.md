@@ -14,6 +14,8 @@ UCLA Institute of Quantitative & Computational Biosciences workshops [recordings
 
 [BWT in R](https://rpubs.com/geest007/BWT)
 
+[genome assembly](https://nekrut.github.io/BMMB554/lecture8/)
+
 Recording of Complete Ensembl Genome Browser Workshop(2021)
 
 Day 1 - https://youtu.be/eKEXArkHdmg<br>
