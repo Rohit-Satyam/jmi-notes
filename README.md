@@ -12,6 +12,8 @@ DNA [Microarray](https://www.youtube.com/watch?v=6ZzFihESjp0)
 
 UCLA Institute of Quantitative & Computational Biosciences workshops [recordings](https://qcb.ucla.edu/collaboratory/workshops/w1-intro-to-unix-command-line/)
 
+[BWT in R](https://rpubs.com/geest007/BWT)
+
 Recording of Complete Ensembl Genome Browser Workshop(2021)
 
 Day 1 - https://youtu.be/eKEXArkHdmg<br>
