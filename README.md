@@ -16,6 +16,8 @@ UCLA Institute of Quantitative & Computational Biosciences workshops [recordings
 
 [genome assembly](https://nekrut.github.io/BMMB554/lecture8/)
 
+Format conversion in [R](https://cran.r-project.org/web/packages/rio/vignettes/rio.html)
+
 Recording of Complete Ensembl Genome Browser Workshop(2021)
 
 Day 1 - https://youtu.be/eKEXArkHdmg<br>
